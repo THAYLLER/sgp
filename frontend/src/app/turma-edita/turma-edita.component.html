@@ -1,0 +1,31 @@
+<br>
+<br>
+<br>
+<br>
+<form method="POST" [formGroup]="formulario" (ngSubmit)="enviar()" >
+<div class="container register-form">
+    <div class="form">
+        
+        <div class="note">
+            <h5>Cadastro de novas turmas</h5>
+        </div>
+
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Código" formControlName="codigo" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" formControlName="curso" >
+                            <option *ngFor = "let curso of cursos" [selected]="curso === curso.descricao" value={{curso.descricao}}>{{curso.descricao}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btnSubmit">Salvar</button>
+        </div>
+    </div>
+</div>
+</form>

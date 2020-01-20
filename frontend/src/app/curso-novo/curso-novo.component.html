@@ -1,0 +1,34 @@
+<br>
+<br>
+<br>
+<br>
+<form method="POST" [formGroup]="formulario" (ngSubmit)="enviar()" >
+<div class="container register-form">
+    <div class="form">
+        
+        <div class="note">
+            <h5>Cadastro de novos cursos</h5>
+        </div>
+
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Data de início (0000-00-00)" value="" required formControlName="data_inicio"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Última parcela paga pelo cordenador" value="" required formControlName="ultima_parcela_paga_coordenador"/>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea name="Text1" cols="40" rows="5" class="form-control" placeholder="Descrição" required formControlName="descricao"></textarea>
+                        
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btnSubmit">Salvar</button>
+        </div>
+    </div>
+</div>
+</form>

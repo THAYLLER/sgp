@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row">
+  
+    <p></p>
+    <h1>Bootstrap Table Panel with Pagination</h1>
+    <p>A simple example of how-to put a bordered table within a panel. Responsive, place holders in header/footer for buttons or pagination.</p>
+    <p></p>
+    <p> </p><p> </p>
+      <br><br><br><br><br>
+        <div class="col-md-10 col-md-offset-1">
+  
+            <div class="panel panel-default panel-table">
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col col-xs-6">
+                    <h3 class="panel-title">TURMA</h3>
+                  </div>
+                  <div class="col col-xs-6 text-right">
+                    <a class="btn btn-sm btn-primary btn-create" [routerLink]="['/turma/novo']">ADICIONAR</a>
+                  </div>
+                </div>
+              </div>
+              <br /><br />
+              <div class="panel-body">
+                <table class="table table-striped table-bordered table-list">
+                  <thead>
+                    <tr>
+                        <th class="hidden-xs"><fa-icon [icon]="faCog"></fa-icon></th>
+                        <th class="hidden-xs">ID</th>
+                        <th>Código</th>
+                        <th>Curso</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                          <tr *ngFor = "let turma of turmas">
+                            <td align="center" style="padding-left: 0%!important;">
+                              <a class="btn btn-default" [routerLink]="['/turma/edita',turma.id]"><fa-icon [icon]="faEdit"></fa-icon></a>
+                              <a class="btn btn-danger" [routerLink]="['/turma']" (click)="excluir(turma.id);"><fa-icon [icon]="faTrash"></fa-icon></a>
+                            </td>
+                            <td class="hidden-xs">{{turma.id}}</td>
+                            <td>{{turma.codigo}}</td>
+                            <td>{{turma.curso}}</td>
+                          </tr>
+                        </tbody>
+                </table>
+  
+              </div>
+            </div>
+  
+  </div></div></div>
+  <br /><br /><br /><br /><br /><br />
+  

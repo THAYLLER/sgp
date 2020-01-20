@@ -1,0 +1,31 @@
+<br>
+<br>
+<br>
+<br>
+<form method="POST" [formGroup]="formulario" (ngSubmit)="atualizar()" >
+<div class="container register-form">
+    <div class="form">
+        
+        <div class="note">
+            <h5>Atualizar disciplina</h5>
+        </div>
+        <input type="hidden" class="form-control" required formControlName="_id"/>
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Carga horaria" value="" required formControlName="carga_horaria_disciplina"/>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <textarea name="Text1" cols="40" rows="5" class="form-control" placeholder="Descrição" required formControlName="descricao"></textarea>
+                        
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btnSubmit">Atualizar</button>
+        </div>
+    </div>
+</div>
+</form>

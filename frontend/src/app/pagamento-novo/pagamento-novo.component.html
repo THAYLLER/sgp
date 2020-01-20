@@ -1,0 +1,65 @@
+<br>
+<br>
+<br>
+<br>
+<form method="POST" [formGroup]="formulario" (ngSubmit)="enviar()" >
+<div class="container register-form">
+    <div class="form">
+        
+        <div class="note">
+            <h5>Cadastro de pagamentos</h5>
+        </div>
+
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Data (0000-00-00)" formControlName="data" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Valor (00.00)" formControlName="valor" value="" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Período" formControlName="periodo" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Carga horário do periodo" formControlName="carga_horaria_periodo" value="" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Horas em sala" formControlName="horas_em_sala" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="valor total (00.00)" formControlName="valor_total" value="" required />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="">Curso</label>
+                        <select class="form-control" formControlName="curso" placeholder="Curso">
+                            <option *ngFor = "let curso of cursos" value={{curso.id}}>{{curso.descricao}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Disciplina</label>
+                        <select class="form-control" formControlName="disciplina" placeholder="Curso">
+                            <option *ngFor = "let disciplina of disciplinas" value={{disciplina.id}}>{{disciplina.descricao}}</option>
+                        </select>
+                    </div>
+                
+                    <div class="form-group">
+                        <label for="">Profissional</label>
+                        <select class="form-control" formControlName="profissional" placeholder="Curso">
+                            <option *ngFor = "let profissional of profissionais" value={{profissional.id}}>{{profissional.nome}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btnSubmit">Salvar</button>
+        </div>
+    </div>
+</div>
+</form>
